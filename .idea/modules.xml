@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/xslt-api.iml" filepath="$PROJECT_DIR$/.idea/xslt-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../xslt-proxy/.idea/xslt-proxy.iml" filepath="$PROJECT_DIR$/../xslt-proxy/.idea/xslt-proxy.iml" />
     </modules>
   </component>
 </project>
