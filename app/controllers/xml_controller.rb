@@ -4,9 +4,7 @@ class XmlController < ApplicationController
   before_action :parse_params, only: :index
   def index
     limit = params[:limit].to_i
-    array = (1..limit).select { |num| [1, 5, 6].member?(num % 10) }
-    array.delete_if { |element| !(element**2).to_s.end_with?(element.to_s) }
-    @result = array.map { |element| { x: element, xsqr: element**2 } }
+    @result = automorphs(limit).map { |element| [element, element**2] }
     respond_to do |format|
       format.xml { render xml: @result.to_xml }
       format.rss { render xml: @result.to_xml }
@@ -15,5 +13,12 @@ class XmlController < ApplicationController
 
   def parse_params
     @limit = params[:limit]
+  end
+
+  private
+
+  def automorphs(num)
+    array = (1..num).select { |element| [1, 5, 6].member?(element % 10) }
+    array.delete_if { |element| !(element**2).to_s.end_with?(element.to_s) }
   end
 end
