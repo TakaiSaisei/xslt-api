@@ -12,5 +12,4 @@ class XmlControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_includes @response.headers['Content-Type'], 'application/rss'
   end
-
 end
