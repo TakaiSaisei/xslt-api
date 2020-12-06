@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Top-level class documentation comment.
 class XmlController < ApplicationController
   before_action :parse_params, only: :index
   def index
